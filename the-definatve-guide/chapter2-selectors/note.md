@@ -172,7 +172,8 @@ e.g
     <li>2</li>
     <li>3</li>
   </ul>
-</p>```
+</p>
+
 ```css
 p + ol {
   color: red;
@@ -180,4 +181,4 @@ p + ol {
 
 ol + ul {
   color:orange;
-}```
+}
