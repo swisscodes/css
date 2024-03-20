@@ -118,7 +118,7 @@ match attribute values case-insensitively, regardless of document language rules
 
 ## Using Document Structure
 
-![image info](./images/html-structure.png)
+![image info](../images/html-structure.png)
 
 An element is said to be the parent of another element if it appears directly above that element in
 the document hierarchy. For example, in Figure 2-14, the first `<p>` element from the left is
