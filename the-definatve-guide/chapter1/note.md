@@ -33,3 +33,9 @@ The rel
 attribute stands for relation, and in this case, the relation is stylesheet
 . CSS has an optional type attribute whose default value is text/css , so
 you can include type="text/css" or leave it out, whichever you prefer.
+
+Next, we find the href attribute. The value of this attribute is the URL of your stylesheet. This
+URL can be either absolute or relative—that is, either relative to the URL of the document
+containing the URL, or else a complete URL that points to a unique location on the web. In our
+example, the URL is relative. It could have been something absolute, like
+<http://example.com/sheet1.css>
