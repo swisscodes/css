@@ -137,11 +137,11 @@ can be translated as “found within,” “which is part of,” or “that is a
 you read the selector right to left. Thus, h1 em can be translated as, “Any `<em>` element that
 is a descendant of an `<h1>` element.”
 
-## Selecting Children
+## Selecting Children >
 
 In some cases, you don’t want to select an arbitrarily descended element. Rather, you want to
-narrow your range to select an element that is specifically a child of another element. You might,
-for example, want to select a `<strong>` element only if it is a child (as opposed to any other
+narrow your range to select an element that is specifically a child/children of another element. You might,
+for example, want to select a `<strong>` element only if it is a child/children (as opposed to any other
 level of descendant) of an `<h1>` element. To do this, you use the child combinator, which is the
 greater-than symbol ( > ):
 
@@ -151,7 +151,7 @@ This rule will make red the `<strong>` element shown in the first `<h1>` , but n
 `<h1>This is <strong>very</strong> important.</h1>`
 `<h1>This is <em>really <strong>very</strong></em> important.</h1>`
 
-## Selecting Adjacent-Sibling Elements
+## Selecting Adjacent-Sibling Elements +
 
 Let’s say you want to style the paragraph immediately after a heading, or give a special margin
 to a list that immediately follows a paragraph.
@@ -182,3 +182,24 @@ p + ol {
 ol + ul {
   color:orange;
 }
+
+
+## Selecting Following Siblings ~
+
+h2 ~ ol {
+
+} // this selects any ol that follows h2 and share same parent with h2
+e.g will select all the ol
+```html 
+<div>
+    <h2> </h2>
+    <ol>
+        <li></li>
+    </ol>
+    <ol>
+        <li></li>
+    </ol>
+    <ol>
+        <li></li>   
+    </ol>
+</div>
