@@ -1,0 +1,45 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+.selector {
+	// we consider is as scope or parent
+	color: darkcyan;
+	&.other-class {
+		color: chocolate;
+	}
+	&__descendent {
+		color: var.$cornflowerblue;
+	}
+
+	/*selecting pseudo state*/
+	&:hover {
+		color: rgb(231, 55, 55);
+		background-color: aquamarine;
+		&.other-class {
+			@include mix.alert-text(darkslategray);
+		}
+	}
+
+	/* another way to use parent/scope selector here 
+       we saying use this class that has this parent has its descendant
+       rare usage but possible so i noted it
+
+       	Selects all elements with name2 that is a descendant of an element with name1
+        e.g .name1 .name2
+    */
+	.other & {
+		color: rgb(233, 55, 159);
+	}
+
+	.home {
+		color: #000;
+	}
+}
+
+.other {
+	:nth-child(2):hover {
+		@include mix.mixin-with-inner-content(blue) {
+			font-weight: bold;
+		}
+	}
+}

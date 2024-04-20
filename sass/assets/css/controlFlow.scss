@@ -1,0 +1,54 @@
+$brightness: 60;
+@if ($brightness > 60) {
+	color: black;
+} @else {
+	//do something else
+}
+
+$list: 1, 2, 3, 4;
+
+$mymap: (
+	a: 1,
+	b: 2,
+);
+
+//interpolate in sass .m-t-#{$variable}
+
+// nth of is used to access a list/map
+//nth($list: , $n: )
+
+@debug 'here we go : #{nth($myapp, 2)}';
+
+// we also have extend which is almost like saying inherit or extend this class
+//e.g
+.danger {
+	background: red;
+	color: white;
+}
+
+.btn-danger {
+	@extend .danger;
+	padding: 2px;
+}
+
+//placeholders are kind of better than extending or inheriting from a class
+%danger {
+	background: red;
+	color: white;
+}
+
+.btn-danger {
+	@extend %danger;
+	padding: 2px;
+}
+
+//then we have functions
+@function pxToRem($px) {
+	@return calc($px / 16px) * 1rem;
+}
+
+@function pxToEm($px) {
+	@return calc($px / 16px) * 1em;
+}
+
+//from here go to sass website and read docs

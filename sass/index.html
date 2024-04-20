@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Sass book</title>
+	</head>
+	<div>
+		<div class="selector">
+			<h1>
+				Parent/scope Selector (&) it make more sense to say copy paste the scope
+				that you are inside
+			</h1>
+		</div>
+		<div class="selector other-class">
+			<h1>
+				Parent/scope Selector (&) it make more sense to say copy paste the scope
+				that you are inside
+			</h1>
+			<div class="selector__child">
+				<p>just any paragraph element</p>
+				<p class="selector__descendent">selecting a class</p>
+			</div>
+			<div class="selector__child">
+				<p class="selector__descendent">selecting a class</p>
+			</div>
+		</div>
+		<div class="selector">
+			<p>
+				a div without using the class that contains both class names here we
+				target only this specific class
+			</p>
+		</div>
+		<div class="other">
+			<p class="selector">
+				a div we used to demostrate the other class using the parent/scope
+				selector has it child
+			</p>
+			<p>
+				second paragraph
+			</p>
+		</div>
+		<script type="module" src="/assets/js/index.js"></script>
+	</body>
+</html>

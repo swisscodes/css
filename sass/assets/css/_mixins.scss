@@ -1,0 +1,30 @@
+@mixin alert-text($color: blue) {
+	background-color: $color;
+	color: #f00;
+	font-variant: small-caps;
+}
+
+@mixin mixin-with-inner-content($color: blue) {
+	background-color: $color;
+	color: #f00;
+	font-variant: small-caps;
+    @content
+}
+
+/* mixins are like functions but not function they 
+   just dump what you defined in the scope
+   they can take arguments/parameters, arguments 
+   can have default value, we can also use null as default value
+
+   we can provide arguments also by using named parameters
+   @include mixin_name(arg1:something, arg2:other_thing)
+   @include mixin_name(arg2:something, arg1:other_thing)
+
+   .other {
+	:nth-child(2):hover {
+		@include mix.mixin-with-inner-content(blue) {
+			font-weight: bold;
+		}
+	}
+}
+*/
