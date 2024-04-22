@@ -43,3 +43,16 @@
 		}
 	}
 }
+
+
+// sass   vs new css equivalent
+.sample {
+	ul {display: flex;}
+	a {color:black;}
+}
+
+//css equivalent
+.sample {
+	& ul {display: flex;}
+	& a {color:black;}
+}
