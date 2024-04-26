@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./svg.css" />
+		<title>svg</title>
+	</head>
+	<body>
+		<div><a href="../index.html">hello</a></div>
+
+		<!-- viewBox="0 0 140 170" -->
+		<svg
+			class="chpt1-01-svg"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			viewBox="0 0 140 170"
+		>
+			<title>Cat</title>
+			<desc>Stick Figure of a Cat</desc>
+			<circle class="chpt1-circle" />
+			<circle class="chpt1-circle-eye-left" />
+			<circle class="chpt1-circle-eye-right" />
+			<g id="whiskers">
+				<line x1="75" y1="105" x2="135" y2="95" stroke="black" />
+				<line x1="75" y1="105" x2="135" y2="115" stroke="black" />
+			</g>
+			<use xlink:href="#whiskers" transform="scale(-1 1) translate(-140 0)" />
+			<polyline
+				points="40 55, 55 0, 75 45, 95 0, 110 65"
+				stroke="black"
+				fill="none"
+			/>
+			<polyline
+				points="40 115, 45 125, 90 125, 95 115"
+				stroke="black"
+				fill="none"
+			/>
+			<text x="60" y="165">Cat</text>
+		</svg>
+
+		<!-- Hamburger -->
+
+		<div class="examples">
+			<button
+				class="button-one"
+				type="button"
+				arial-controls="primary-navigation"
+				arial-expanded="false"
+			>
+				<svg class="hamburger" viewBox="0 0 100 100" width="250">
+					<rect class="top" width="80" height="10" x="10" y="25" rx="5"></rect>
+					<rect
+						class="middle"
+						width="80"
+						height="10"
+						x="10"
+						y="45"
+						rx="5"
+					></rect>
+					<rect
+						class="bottom"
+						width="80"
+						height="10"
+						x="10"
+						y="65"
+						rx="5"
+					></rect>
+				</svg>
+			</button>
+
+			<button
+				class="button-two"
+				type="button"
+				arial-controls="primary-navigation"
+				arial-expanded="false"
+			>
+				<svg class="hamburger" viewBox="0 0 100 100" width="250">
+					<line class="top" x1="85" x2="15" y1="30" y2="30" ></line>
+					<line class="middle" x1="15" x2="85" y1="50" y2="50" ></line>
+					<line class="bottom" x1="15" x2="85" y1="70" y2="70" ></line>
+				</svg>
+			</button>
+
+			<button
+				class="button-three"
+				type="button"
+				arial-controls="primary-navigation"
+				arial-expanded="false"
+			></button>
+		</div>
+
+		<script type="module" src="./svg.js"></script>
+	</body>
+</html>

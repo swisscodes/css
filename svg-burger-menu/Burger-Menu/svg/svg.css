@@ -1,0 +1,197 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+/* html {
+
+	color-scheme: dark light;
+} */
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: red;
+	padding: 0 10px;
+}
+
+.chpt1-01-svg {
+	width: 140px;
+	height: 170px;
+}
+
+.chpt1-circle {
+	cx: 70;
+	cy: 95;
+	r: 50;
+	stroke: black;
+	fill: none;
+}
+
+.chpt1-circle-eye-left {
+	cx: 50;
+	cy: 87;
+	r: 5;
+	fill: brown;
+	stroke: greenyellow;
+	stroke-width: 3;
+}
+
+.chpt1-circle-eye-right {
+	cx: 90;
+	cy: 87;
+	r: 5;
+	fill: brown;
+	stroke: greenyellow;
+	stroke-width: 3;
+}
+
+text {
+	font-size: 1.2rem;
+	stroke: none;
+	fill: black;
+}
+
+/* Hamburger css */
+
+/* Hamburger css botton one  ******************************************************************/
+button:has(> svg.hamburger) {
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 10px solid var(--button-color, black);
+	/* this is general for all buttons that has svg with a class of hamburger as direct child we select the button */
+
+	&.button-one {
+		--button-color: #333;
+		svg {
+			fill: var(--button-color);
+			rect {
+				transition: y 300ms ease-in 300ms, rotate 300ms ease-in;
+				transform-origin: center;
+			}
+		}
+
+		&:hover {
+			svg {
+				rect {
+					transition: y 300ms ease-in, rotate 300ms ease-in 300ms;
+				}
+			}
+		}
+
+		&:hover :is(.top, .bottom) {
+			y: 45;
+		}
+
+		&:hover .top {
+			rotate: 50deg;
+		}
+		&:hover .middle {
+			transition: opacity 150ms 150ms;
+			opacity: 0;
+		}
+		& .middle {
+			transition: opacity 150ms 200ms;
+		}
+		&:hover .bottom {
+			rotate: -50deg;
+		}
+
+		[aria-expanded='true'] {
+		}
+	}
+
+	/* Hamburger css botton one  end******************************************************************/
+
+	/* Button two */
+	&.button-two {
+		--button-color: #232;
+		svg {
+			line {
+				stroke: var(--button-color);
+				stroke-width: 10;
+				stroke-linecap: round;
+				stroke-dasharray: 80;
+				stroke-dashoffset: 0;
+				animation: to-open-nav 1s;
+			}
+			line.top {
+				--rotation: 45deg;
+				transform-origin: 25px 40px;
+			}
+			line.middle {
+				animation: none;
+				transition: opacity 0.5s 0.5s;
+			}
+			line.bottom {
+				--rotation: -45deg;
+				transform-origin: 25px 60px;
+			}
+		}
+		&:hover {
+			svg {
+				line {
+					animation: to-close-nav 1s forwards;
+				}
+				line.middle {
+					animation: none;
+					transition: opacity 0.5s;
+					opacity: 0;
+				}
+			}
+		}
+	}
+	/* Hamburger css botton two end  ******************************************************************/
+
+	/* Button three */
+	&.button-three {
+		--button-color: blue;
+	}
+	/* Hamburger css botton three end  ******************************************************************/
+}
+
+@keyframes to-open-nav {
+	0% {
+		stroke-dashoffset: 0;
+		rotate: var(--rotation);
+	}
+	40% {
+		stroke-dashoffset: 79.9;
+		rotate: var(--rotation);
+	}
+}
+@keyframes to-close-nav {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	40% {
+		stroke-dashoffset: 79.9;
+	}
+	60% {
+		stroke-dashoffset: 79.9;
+		rotate: var(--rotation);
+	}
+	100% {
+		stroke-dashoffset: 0;
+		rotate: var(--rotation);
+	}
+}
